@@ -1,0 +1,1831 @@
+Delivered-To: scott.mattera34@gmail.com
+Received: by 2002:ad4:5b8e:0:b0:89c:de68:9de4 with SMTP id 14csp2853319qvp;
+        Tue, 14 Apr 2026 10:47:17 -0700 (PDT)
+X-Received: by 2002:ad4:4ee4:0:b0:8ac:abc5:8756 with SMTP id 6a1803df08f44-8acabc58ad5mr143647896d6.25.1776188837150;
+        Tue, 14 Apr 2026 10:47:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1776188837; cv=none;
+        d=google.com; s=arc-20240605;
+        b=IZenPxh7Ixl7neO4BiIGFOYdlNXbb/Q1ERrgoTeGHejpBHtN01AQYKrCDbuC5AdEBc
+         Tb+EquOD6FCFmoTSdTNONzszHyeZGWtwxr/eZ/teadWsHezuZwennh5/4vap6XNM/qR9
+         Wf/ATYDJXyvRHET7xe19Z4d1GI89pODgXW6ytmOkxxnMr/Bu2nRhSA79ur0RujFNVXNr
+         mNeF2lj7IraVgJIukYHPHnSiK9wZniz07eLJNjO5D4cYmYEIJUEGCI6ksrl+NPJhMs82
+         Jg9NBxeP8+7w9sc1N1U8ckeWOLr+Wtmx7HBC+FvRJ9lcPUVpXN/LfVeJdDTHwbTcjPyJ
+         Pjww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:list-unsubscribe:list-unsubscribe-post:mime-version
+         :subject:message-id:to:from:date:cfbl-address:dkim-signature
+         :dkim-signature;
+        bh=zTfj1ZDMKHs9fN4AuUbFmIIQbnbY/tQSjko5H74DA3I=;
+        fh=U0pnj7zmsv/UgmQcuDZeHwfpVM6iUJKezAIdou6LCpM=;
+        b=HhIpy3jkX66NY6+atJ4oJ6arZPzz1shiIcUUhbFoDyaydla98NW+Vqkvrj0XXxix3P
+         BuMk3gZ2DSc814YL0vaVL4i1ridU6OBFDk9CV7tLgCwFVydzp+thPB27R8yeeZCvkat2
+         Fm1u2e4qZD2LLe7//zDs1e36NEespHBs0Dh9sN90yVd0lhaV0Z6htlOFLb01xuyvxzdM
+         pxJir/vLF5u4+RiZghXW44WoI2yw0YvmWIfogMGMIPwalruVPBpVBjQUMCdRuAM3T2oH
+         LBo/pjfFqNu89xwGVq1wuWGJxPQ7JtCFrq3f8wuEZrjwNpDvRQc8346tJFPpEA8eJiH5
+         i//A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@telmdfirst.com header.s=acdkim1 header.b=WRa1zjfp;
+       dkim=pass header.i=@acems3.com header.s=acdkim1 header.b=Oq7wAQX0;
+       spf=pass (google.com: domain of bounce-1316796-171-508599-scott.mattera34=gmail.com@em-1316796.telmdfirst.com designates 192.92.97.56 as permitted sender) smtp.mailfrom="bounce-1316796-171-508599-scott.mattera34=gmail.com@em-1316796.telmdfirst.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=telmdfirst.com
+Return-Path: <bounce-1316796-171-508599-scott.mattera34=gmail.com@em-1316796.telmdfirst.com>
+Received: from s2.csa2.acemsb3.com (s2.csa2.acemsb3.com. [192.92.97.56])
+        by mx.google.com with ESMTPS id 6a1803df08f44-8ae65e6e8a7si15741726d6.149.2026.04.14.10.47.17
+        for <scott.mattera34@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 14 Apr 2026 10:47:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-1316796-171-508599-scott.mattera34=gmail.com@em-1316796.telmdfirst.com designates 192.92.97.56 as permitted sender) client-ip=192.92.97.56;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@telmdfirst.com header.s=acdkim1 header.b=WRa1zjfp;
+       dkim=pass header.i=@acems3.com header.s=acdkim1 header.b=Oq7wAQX0;
+       spf=pass (google.com: domain of bounce-1316796-171-508599-scott.mattera34=gmail.com@em-1316796.telmdfirst.com designates 192.92.97.56 as permitted sender) smtp.mailfrom="bounce-1316796-171-508599-scott.mattera34=gmail.com@em-1316796.telmdfirst.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=telmdfirst.com
+X-KumoRef: eyJfQF8iOiJcXF8vIiwicmVjaXBpZW50Ijoic2NvdHQubWF0dGVyYTM0QGdtYWlsLmNvbSJ9
+DKIM-Signature: v=1; a=rsa-sha256; d=telmdfirst.com; s=acdkim1; c=relaxed/relaxed;
+	bh=zTfj1ZDMKHs9fN4AuUbFmIIQbnbY/tQSjko5H74DA3I=;
+	h=from:to:subject:date:mime-version:content-type:sender:cc:date:message-id:
+		list-unsubscribe:list-unsubscribe-post; t=1776187574; x=1776273974;
+	b=WRa1zjfpHFFIC4HbovIMYqKP1RVEwUZitgMUeAsIntw9cCo3m+gPhpQ3AbRPFTSAUjUZfE0Ek
+	fXEy7ce9Vh0umA2t06FEIdII3Ct168LUr7GC5qceesTaoazZgVG+JZUmsHZYiqp0Ohdp6neZ9TR
+	GWB4LbmMaJI0Xj6BUsLcYP1WhZx44COKmR9Av0KpEbiE4XKjolmWNGdcSusGQZrXD0VTqu1uLBx
+	Dv7L9lKRPKCOM17TbRJQs4+MBIL2IW5NkUfDGQw8cACTPByra9H21ZTiLezP3IdkwaREB+MDKnr
+	MkRXHHeuG0v6wdsJbWWUnaHOHTBFIkwQe+0DWyQ1zYZw==;
+DKIM-Signature: v=1; a=rsa-sha256; d=acems3.com; s=acdkim1; c=relaxed/relaxed;
+	bh=zTfj1ZDMKHs9fN4AuUbFmIIQbnbY/tQSjko5H74DA3I=;
+	h=from:to:subject:date:mime-version:content-type:sender:cc:date:message-id:
+		list-unsubscribe:list-unsubscribe-post; t=1776187574; x=1776273974;
+	b=Oq7wAQX0ok1BnnJp8kSJi4rCORp0mf1TIFENg5WvxZLmAlI9tuT83B/daUuJeUvLMmRuCsmkD
+	3mdu0DsoTSs2ydQgd7ClPzqq7vRdlVuppnZjNzNp0ToYyxz0s3N7c+t9dymxoG2py4O6BR26lA6
+	04BRdbljE6P1I4i7K9vDQ9iUfwYVcMTS3nMhHywv65BJ35y6lXfcykv8wUmtEaokdc6LHfyWec9
+	K9mLT27iFpEMrMw1Zau3+GmYkvMWFlduTeNe0MXRo69MEvQOoBir96PLrWy9H8w4vLXEd707MHA
+	iMKsltx+LzJqIgcARZSl5pULwesvbkQl7X6hVxlJR8ww==;
+CFBL-Address: fbl-report@acems1.com; report=arf
+X-Mailer: ActiveCampaign Mailer
+Received: from cell-1-5fbd65bdfc-f4zgg (10.65.81.22)
+  by acems1.com (KumoMTA 10.0.70.130) 
+  with ESMTPS (TLSv1_3:TLS13_AES_256_GCM_SHA384)  id 099cbba4382711f1b0411255c88d9495 for <scott.mattera34@gmail.com>;
+  Tue, 14 Apr 2026 17:26:14 +0000
+Date: Tue, 14 Apr 2026 17:26:14 +0000 (GMT)
+From: Emma TelMDFirst <support@telmdfirst.com>
+To: scott.mattera34@gmail.com
+Message-ID: <431405613.10707014.1776187574087@cell-1-5fbd65bdfc-f4zgg>
+Subject: =?UTF-8?Q?Need_an_RX=3F_Get_Your_Prescription_in_Minutes_=F0=9F=92=8A?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10707013_1823167651.1776187574087"
+X-DKIM-Options: s=acdkim1
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Virtual-Mta: s2.csa1.acemsc3.com
+X-250ok-CID: 1316796-171
+List-Unsubscribe: <https://anthonybrunetti.activehosted.com/box.php?nl=1&c=171&m=229&s=63ac89fb4774c2809f669f61fcdd0af1&funcml=unsub2&luha=1>,<mailto:unsubscribe-3dda189f7314b3a401bcb612e0412002-171-63ac89fb4774c2809f669f61fcdd0af1@s2.csa1.acemsc3.com>
+Feedback-ID: 1316796:activecampaign
+X-Sending-Engine: Hedwig PCS
+X-Report-Abuse: Please report abuse to abuse@activecampaign.com
+X-lid: c2NvdHQubWF0dGVyYTM0QGdtYWlsLmNvbSAsIGMxNzEgLCBtMjI5ICwgczE3OTgyODIgLCBsMQ==
+X-mid: c2NvdHQubWF0dGVyYTM0QGdtYWlsLmNvbSAsIGMxNzEgLCBtMjI5ICwgczE3OTgyODI=
+
+------=_Part_10707013_1823167651.1776187574087
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Get a 100% refund if we can't treat you. Prescriptions & refills in minutes=
+.Prescriptions by phone or text. No video required.
+
+https://telmdfirst.com=20
+
+Get Your Prescription Sent in Minutes https://telmdfirst.com/welcome-back/?=
+first=3DScott&last=3DMattera&email=3Dscott.mattera34@gmail.com&phone=3D5515=
+793682100% refund if we can't treat you. No risk.
+
+=20
+
+https://telmdfirst.com/welcome-back/?first=3DScott&last=3DMattera&email=3Ds=
+cott.mattera34@gmail.com&phone=3D5515793682=20
+
+Send My Prescription https://telmdfirst.com/welcome-back/?first=3DScott&las=
+t=3DMattera&email=3Dscott.mattera34@gmail.com&phone=3D5515793682=20
+
+=20
+
+Prefer to call?
+888-851-5333
+
+=20
+
+https://telmdfirst.com/welcome-back/?first=3DScott&last=3DMattera&email=3Ds=
+cott.mattera34@gmail.com&phone=3D5515793682=20
+
+=20
+
+=20
+
+https://telmdfirst.com/welcome-back/?first=3DScott&last=3DMattera&email=3Ds=
+cott.mattera34@gmail.com&phone=3D5515793682=20
+
+Order Prescriptions & Refills https://telmdfirst.com/welcome-back/?first=3D=
+Scott&last=3DMattera&email=3Dscott.mattera34@gmail.com&phone=3D5515793682
+Sent to the Pharmacy You Choose.
+
+29 million members trust TelMDFirst.
+
+* Secure treatment by phone or text
+
+* 100% refund if we can't treat you
+
+* U.S. board-certified doctors
+
+* Upfront pricing. No hidden fees.
+
+=20
+
+https://telmdfirst.com/welcome-back/?first=3DScott&last=3DMattera&email=3Ds=
+cott.mattera34@gmail.com&phone=3D5515793682=20
+
+=20
+
+=20
+
+Complete your visit online https://telmdfirst.com/welcome-back/?first=3DSco=
+tt&last=3DMattera&email=3Dscott.mattera34@gmail.com&phone=3D5515793682.
+100% refund if we can't treat you.
+
+https://telmdfirst.com/welcome-back/?first=3DScott&last=3DMattera&email=3Ds=
+cott.mattera34@gmail.com&phone=3D5515793682=20
+
+https://telmdfirst.com/welcome-back/?first=3DScott&last=3DMattera&email=3Ds=
+cott.mattera34@gmail.com&phone=3D5515793682=20
+
+   New Prescriptions & Refills
+Doctors Available 24/7
+
+=20
+
+Connect with us:
+
+https://www.facebook.com/telmdfirst/=20
+
+=20
+
+https://twitter.com/telmdfirst=20
+
+=20
+
+https://www.linkedin.com/company/telmdfirst=20
+
+*If the doctor believes medication is warranted, he or she can write a pres=
+cription and send it directly to the pharmacy of your choice. Please be awa=
+re that we do not prescribe controlled substances, nor do we prescribe cert=
+ain other medications. And finally, TelMdFirst's partners do not guarantee =
+a prescription will be written; that will be determined by the physician, b=
+ased on your clinical presentation.
+
+=20
+
+TelMDFirst.com<br>30 N Gould St.<br>Ste R<br>Sheridan, WY 82801<br>United S=
+tates
+
+Unsubscribe me http://anthonybrunetti.activehosted.com/proc.php?c=3D171&m=
+=3D229&s=3D63ac89fb4774c2809f669f61fcdd0af1&d=3D1798282&v=3D2&nl=3D1&act=3D=
+unsub
+------=_Part_10707013_1823167651.1776187574087
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta http-equiv=3D"Content-Language" content=3D"en-us">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta name=3D"format-detection" content=3D"date=3Dno">
+<meta name=3D"format-detection" content=3D"address=3Dno">
+<meta name=3D"format-detection" content=3D"email=3Dno">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, minimal-ui, initia=
+l-scale=3D1.0, maximum-scale=3D1.0, user-scalable=3D0;">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<title></title>
+<style data-ac-keep=3D"true"> .ExternalClass { width: 100%; background: inh=
+erit; background-color: inherit; } .ExternalClass, .ExternalClass p, .Exter=
+nalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {=
+ line-height: 100%; } .ExternalClass p, .ExternalClass ul, .ExternalClass o=
+l { Margin: 0; } .undoreset div p, .undoreset p { margin-bottom: 20px; } di=
+v[class^=3D"aolmail_divbody"] { overflow: auto; } [owa] #ac-footer { paddin=
+g: 20px 0px !important; background: inherit; background-color: inherit; } a=
+[x-apple-data-detectors] { color: inherit !important; text-decoration: none=
+ !important; font-size: inherit !important; font-family: inherit !important=
+; font-weight: inherit !important; line-height: inherit !important; } @-ms-=
+viewport { width: device-width; } </style>
+<style data-ac-keep=3D"true">
+@media only screen and (max-width: 600px) { /*-----------------------------=
+--------------------------------------------*\ Abandoned Cart widget \*----=
+--------------------------------------------------------------------*/ .td_=
+abandoned-cart img {display: block;padding-right: 0 !important;padding-bott=
+om: 0 !important;width: 100% !important;max-width: 100% !important;height: =
+auto !important;} body { padding: 0!important; font-size:1em!important; } *=
+ { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing:=
+ border-box; } *[class].divbody {-webkit-text-size-adjust:none !important;}=
+ *[class].td_picture img {width:auto !important;} *[class].td_text { line-h=
+eight: 110%; } *[class].td_button { width: auto; } /* Collapse all block el=
+ements */ :not(.body) table { display: block!important; float:none!importan=
+t; border-collapse:collapse !important; width:100% !important; min-width:10=
+0% !important; clear:both!important; } :not(.body) thead, :not(.body) tbody=
+, :not(.body) tr { display:block!important; float:none!important; width:100=
+% !important; } :not(.body) th, :not(.body) td, :not(.body) p { display:blo=
+ck!important; float:none!important; width:100% !important; clear:both!impor=
+tant; } /* Remove browser default styling for elements */ ul, ol { margin-l=
+eft: 20px; margin-bottom: 10px; margin-top: 10px; -webkit-margin-before: 0;=
+ -webkit-margin-after: 0; -webkit-padding-start: 0; } /* Set default height=
+ for spacer once collapse */ *[class].spacer { height: auto!important; } a[=
+href^=3Ddate]{ color:inherit !important; text-decoration:none !important;} =
+a[href^=3Dtelephone]{ color:inherit !important; text-decoration:none !impor=
+tant;} a[href^=3Daddress]{ color:inherit !important; text-decoration:none !=
+important;} a[href^=3Demail]{ color:inherit !important; text-decoration:non=
+e !important;} /* Default table cell height */ td[height=3D"12"]{height:12p=
+x!important;font-size:12px!important;line-height:12px!important;}
+td[height=3D"10"]{height:10px!important;font-size:10px!important;line-heigh=
+t:10px!important;}
+td[height=3D"0"]{height:0px!important;font-size:0px!important;line-height:0=
+px!important;} /*----------------------------------------------------------=
+---------------*\ Product Widget \*----------------------------------------=
+---------------------------------*/ .td_product div, .td_product .products-=
+display { float: none !important; display: block !important; width: 100% !i=
+mportant; Margin-bottom: 20px !important; } .td_product img { width: 100% !=
+important; max-width: 100% !important; } /* Default social icons */ *[class=
+].ac-social-icon-16 {width:16px !important; height:16px !important;} *[clas=
+s].ac-social-icon-24 {width:24px !important; height:24px !important;} *[cla=
+ss].ac-social-icon-28 {width:28px !important; height:28px !important;} *[cl=
+ass].__ac_social_icons { margin-right: 0px !important; } }
+</style>
+<style data-ac-keep=3D"true"> @media only screen and (max-width: 320px) { #=
+layout-row5717 img { width: 100% !important; height: auto !important; max-w=
+idth: 204px !important; } #layout-row5721 img { width: 100% !important; hei=
+ght: auto !important; max-width: 238px !important; } #layout-row5726 img { =
+width: 100% !important; height: auto !important; max-width: 320px !importan=
+t; } #layout-row5727 img { width: 100% !important; height: auto !important;=
+ max-width: 236px !important; } #layout-row5734 img { width: 100% !importan=
+t; height: auto !important; max-width: 320px !important; } #layout-row5739 =
+img { width: 100% !important; height: auto !important; max-width: 320px !im=
+portant; } #layout-row5745 img { width: 100% !important; height: auto !impo=
+rtant; max-width: 238px !important; } table, tbody, td, .divbody { display:=
+ table !important; width: 100% !important; max-width: 100% !important; } .t=
+d_rss .rss-item img.iphone_large_image { width: auto !important; } u + .bod=
+y { display: table !important; width: 100vw !important; min-width: 100vw !i=
+mportant; } u + .body table { display: table !important; width: 100% !impor=
+tant; min-width: 100% !important; } u + .body td { display: block !importan=
+t; width: 100% !important; min-width: 100% !important; } u + .body img { di=
+splay: inline-block !important; margin: auto !important; width: auto !impor=
+tant; vertical-align: bottom !important; } u + .body center { display: bloc=
+k !important; margin: auto !important; width: 100% !important; min-width: 1=
+00% !important; text-align: center !important; } u + .body table._ac_social=
+_table, u + .body table._ac_social_table td, u + .body table._ac_social_tab=
+le div, u + .body table._ac_social_table a { display: inline-block !importa=
+nt; margin: auto !important; width: auto !important; min-width: auto !impor=
+tant; text-align: center !important; } u + .body table._ac_social_table img=
+ { display: inline-block !important; margin: auto !important; width: 32px !=
+important; min-width: 32px !important; max-width: 32px !important; }
+}
+@media only screen and (max-width: 375px) { #layout-row5717 img { width: 10=
+0% !important; height: auto !important; max-width: 204px !important; } #lay=
+out-row5721 img { width: 100% !important; height: auto !important; max-widt=
+h: 238px !important; } #layout-row5726 img { width: 100% !important; height=
+: auto !important; max-width: 375px !important; } #layout-row5727 img { wid=
+th: 100% !important; height: auto !important; max-width: 236px !important; =
+} #layout-row5734 img { width: 100% !important; height: auto !important; ma=
+x-width: 375px !important; } #layout-row5739 img { width: 100% !important; =
+height: auto !important; max-width: 375px !important; } #layout-row5745 img=
+ { width: 100% !important; height: auto !important; max-width: 238px !impor=
+tant; } table, tbody, td, .divbody { display: table !important; width: 100%=
+ !important; max-width: 100% !important; } .td_rss .rss-item img.iphone_lar=
+ge_image { width: auto !important; } u + .body { display: table !important;=
+ width: 100vw !important; min-width: 100vw !important; } u + .body table { =
+display: table !important; width: 100% !important; min-width: 100% !importa=
+nt; } u + .body td { display: block !important; width: 100% !important; min=
+-width: 100% !important; } u + .body img { display: inline-block !important=
+; margin: auto !important; width: auto !important; vertical-align: bottom !=
+important; } u + .body center { display: block !important; margin: auto !im=
+portant; width: 100% !important; min-width: 100% !important; text-align: ce=
+nter !important; } u + .body table._ac_social_table, u + .body table._ac_so=
+cial_table td, u + .body table._ac_social_table div, u + .body table._ac_so=
+cial_table a { display: inline-block !important; margin: auto !important; w=
+idth: auto !important; min-width: auto !important; text-align: center !impo=
+rtant; } u + .body table._ac_social_table img { display: inline-block !impo=
+rtant; margin: auto !important; width: 32px !important; min-width: 32px !im=
+portant; max-width: 32px !important; }
+}
+@media only screen and (max-width: 414px) { #layout-row5717 img { width: 10=
+0% !important; height: auto !important; max-width: 204px !important; } #lay=
+out-row5721 img { width: 100% !important; height: auto !important; max-widt=
+h: 238px !important; } #layout-row5726 img { width: 100% !important; height=
+: auto !important; max-width: 414px !important; } #layout-row5727 img { wid=
+th: 100% !important; height: auto !important; max-width: 236px !important; =
+} #layout-row5734 img { width: 100% !important; height: auto !important; ma=
+x-width: 414px !important; } #layout-row5739 img { width: 100% !important; =
+height: auto !important; max-width: 414px !important; } #layout-row5745 img=
+ { width: 100% !important; height: auto !important; max-width: 238px !impor=
+tant; } table, tbody, td, .divbody { display: table !important; width: 100%=
+ !important; max-width: 100% !important; } .td_rss .rss-item img.iphone_lar=
+ge_image { width: auto !important; } u + .body { display: table !important;=
+ width: 100vw !important; min-width: 100vw !important; } u + .body table { =
+display: table !important; width: 100% !important; min-width: 100% !importa=
+nt; } u + .body td { display: block !important; width: 100% !important; min=
+-width: 100% !important; } u + .body img { display: inline-block !important=
+; margin: auto !important; width: auto !important; vertical-align: bottom !=
+important; } u + .body center { display: block !important; margin: auto !im=
+portant; width: 100% !important; min-width: 100% !important; text-align: ce=
+nter !important; } u + .body table._ac_social_table, u + .body table._ac_so=
+cial_table td, u + .body table._ac_social_table div, u + .body table._ac_so=
+cial_table a { display: inline-block !important; margin: auto !important; w=
+idth: auto !important; min-width: auto !important; text-align: center !impo=
+rtant; } u + .body table._ac_social_table img { display: inline-block !impo=
+rtant; margin: auto !important; width: 32px !important; min-width: 32px !im=
+portant; max-width: 32px !important; }
+}
+@media only screen and (max-width: 667px) { #layout-row5717 img { width: 10=
+0% !important; height: auto !important; max-width: 204px !important; } #lay=
+out-row5721 img { width: 100% !important; height: auto !important; max-widt=
+h: 238px !important; } #layout-row5726 img { width: 100% !important; height=
+: auto !important; max-width: 421px !important; } #layout-row5727 img { wid=
+th: 100% !important; height: auto !important; max-width: 236px !important; =
+} #layout-row5734 img { width: 100% !important; height: auto !important; ma=
+x-width: 667px !important; } #layout-row5739 img { width: 100% !important; =
+height: auto !important; max-width: 650px !important; } #layout-row5745 img=
+ { width: 100% !important; height: auto !important; max-width: 238px !impor=
+tant; } table, tbody, td, .divbody { display: table !important; width: 100%=
+ !important; max-width: 100% !important; } .td_rss .rss-item img.iphone_lar=
+ge_image { width: auto !important; } u + .body { display: table !important;=
+ width: 100vw !important; min-width: 100vw !important; } u + .body table { =
+display: table !important; width: 100% !important; min-width: 100% !importa=
+nt; } u + .body td { display: block !important; width: 100% !important; min=
+-width: 100% !important; } u + .body img { display: inline-block !important=
+; margin: auto !important; width: auto !important; vertical-align: bottom !=
+important; } u + .body center { display: block !important; margin: auto !im=
+portant; width: 100% !important; min-width: 100% !important; text-align: ce=
+nter !important; } u + .body table._ac_social_table, u + .body table._ac_so=
+cial_table td, u + .body table._ac_social_table div, u + .body table._ac_so=
+cial_table a { display: inline-block !important; margin: auto !important; w=
+idth: auto !important; min-width: auto !important; text-align: center !impo=
+rtant; } u + .body table._ac_social_table img { display: inline-block !impo=
+rtant; margin: auto !important; width: 32px !important; min-width: 32px !im=
+portant; max-width: 32px !important; }
+} </style><!--[if !mso]><!-- webfonts --> <!--<![endif]--> <!--[if lt mso 1=
+2]> <![endif]--> <!--[if gte mso 9]>
+<xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:Pixel=
+sPerInch> </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+</head>
+<body id=3D"ac-designer" class=3D"body" style=3D"font-family: Arial; line-h=
+eight: 1.1; margin: 0px; background-color: #3261a0; width: 100%; text-align=
+: center;">
+<img src=3D"https://anthonybrunetti.acemlnc.com/lteo?x=3D5DZiznHKIuHch4z_yw=
+y6W.mh~nAnjtMhj-0vZKbJJ3nP6H4v-w-7UBGh1e3U_t~1lu0xZ5N2VvncDau9B-kCgSSvAb7Ri=
+tM.wPHglKzBUI_WT9LqykyBxB-rAaqRxUHwj-6ijKo5lFGc55J.0NF5jhzc1e_jwQNkkuU3YHnM=
+" border=3D"0" width=3D"1" height=3D"1" style=3D"display:block;width:1px!im=
+portant;min-width:1px!important;max-width:1px!important;height:1px!importan=
+t;border:0;overflow:hidden;"/>
+<br>
+<div style=3D"display: none !important; padding: 0; height: 1px; font-size:=
+ 1px; background-color: inherit !important; opacity: 0; color: transparent;=
+ mso-line-height-rule: exactly; line-height:1px; mso-hide:all;">
+Get a 100% refund if we can't treat you. Prescriptions & refills in minutes=
+.=20
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C
+</div>
+</div>
+<div class=3D"divbody" style=3D"margin: 0px; outline: none; padding: 0px; c=
+olor: #000000; font-family: arial; line-height: 1.1; width: 100%; backgroun=
+d-color: #3261a0; background: #3261a0; text-align: center;">
+<table class=3D"template-table" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" align=3D"left" style=3D"-ms-text-size-adjust: auto; -=
+webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; =
+min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-c=
+olor: #3261a0; background: #3261a0;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td align=3D"center" valign=3D"top" width=3D"100%" style=3D"mso-line-height=
+-rule: exactly;">
+<table class=3D"template-table" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"650" bgcolor=3D"#3261a0" style=3D"-ms-text-size-adjust: aut=
+o; -webkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14=
+px; min-width: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-widt=
+h: 650px;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout_table_6d3f5a87302cfb09f4876b4fc48152bd8de2c118" valign=3D"=
+top" align=3D"center" width=3D"650" style=3D"mso-line-height-rule: exactly;=
+ background-color: #1c375c;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout lay=
+out-table root-table" width=3D"650" style=3D"-ms-text-size-adjust: auto; -w=
+ebkit-text-size-adjust: 100%; border-collapse: collapse; font-size: 14px; m=
+in-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-co=
+lor: #1c375c;">
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5718" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5718" class=3D"layout layout-row widget _widget_text st=
+yle5718" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0; bac=
+kground-color: #242c33;">
+<td id=3D"layout-row-padding5718" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; background-color: #242c33; padding: 20px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5616" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"610" style=3D"line-height: 150%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.5; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 150%; margin: 0; outline: none; padding: 0; colo=
+r: #ffffff; font-size: inherit; font-weight: inherit; line-height: 1.5; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"=
+1.5">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<span style=3D"color: #ffffff; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; text-align: inherit;" class=
+=3D""><span style=3D"color: #ffffff; font-size: 12px; font-weight: 400; lin=
+e-height: inherit; text-decoration: inherit; font-family: arial; font-style=
+: normal;">Prescriptions by phone</span><span style=3D"color: #ffffff; font=
+-size: 12px; font-weight: 400; line-height: inherit; text-decoration: inher=
+it; font-family: arial; font-style: normal;"> </span><span style=3D"color: =
+#ffffff; font-size: 12px; font-weight: 400; line-height: inherit; text-deco=
+ration: inherit; font-family: arial; font-style: normal;">or text. No video=
+ required.</span></span>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5616, #text=
+_div5616 div { line-height: 150% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5726" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0px; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5726" class=3D"layout layout-row widget _widget_picture=
+ style5726" align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5726" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 25px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"600" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13-" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://content.app-us1.com/cdn-cgi/image/onerror=3Dredirect,width=3D650,dpr=3D=
+2,fit=3Dscale-down,format=3Dauto/54Jeb/2021/06/01/20e8e422516b35a98f0984fe6=
+1de5344c610b3d9.png?r=3D736404932" width=3D"242" style=3D"border: none; dis=
+play: block; outline: none; width: 242px; opacity: 1; max-width: 100%;"></a=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5740" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5740" class=3D"layout layout-row widget _widget_text st=
+yle5740" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5740" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px 20px 0px 20px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5638" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"610" style=3D"line-height: 150%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.5; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 150%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: inherit; font-weight: inherit; line-height: 1.5; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" class=3D"" data-line=
+-height=3D"1.5">
+<span class=3D"" style=3D"color: inherit; font-size: 10px; font-weight: inh=
+erit; line-height: inherit; text-decoration: inherit;"> </span>
+<p style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size=
+: inherit; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit; text-align: center;" class=3D""></p>
+<div data-id=3D"5487a30a" data-element_type=3D"widget" data-widget_type=3D"=
+text-editor.default" style=3D"margin: 0; outline: none; padding: 0; color: =
+#ffffff; font-size: 16px; font-weight: inherit; line-height: inherit; text-=
+decoration: inherit; font-family: arial; font-style: normal; text-align: st=
+art;" class=3D"">
+<div style=3D"margin: 0 0px 0 0px; outline: none; padding: 0; color: inheri=
+t; font-size: inherit; font-weight: inherit; line-height: inherit; text-dec=
+oration: inherit; text-align: center;" class=3D"">
+<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-si=
+ze: 18px; font-weight: inherit; line-height: inherit; text-decoration: inhe=
+rit; text-align: center;"></div><a href=3D"https://anthonybrunetti.acemlnc.=
+com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQi=
+k_Ff0DYxzKpBInea95770OxGYOhr13A" target=3D"_blank" data-ac-default-color=3D=
+"1" style=3D"margin: 0; outline: none; padding: 0; color: #f4ffad; text-dec=
+oration: underline; --tw-shadow: 0 0 transparent; --tw-ring-inset: ; --tw-r=
+ing-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(=
+59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow=
+: 0 0 transparent; font-family: arial; font-weight: 400; font-style: normal=
+; font-size: 16px;"><span style=3D"color: inherit; font-size: inherit; font=
+-weight: bold; line-height: inherit; text-decoration: inherit; --tw-shadow:=
+ 0 0 transparent; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring=
+-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offse=
+t-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: =
+arial; font-style: normal;">Get Your Prescription Sent in Minutes<br style=
+=3D""></span></a><span style=3D"color: #ffffff; font-size: 16px; font-weigh=
+t: 400; line-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 tr=
+ansparent; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset=
+-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shado=
+w: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: arial; =
+font-style: normal;">100% refund if we can't treat you. No risk.</span>
+</div>
+</div>
+<p class=3D"" style=3D"margin: 0; outline: none; padding: 0; color: inherit=
+; font-size: inherit; font-weight: inherit; line-height: inherit; text-deco=
+ration: inherit;"></p>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5638, #text=
+_div5638 div { line-height: 150% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5741" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5741" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5741" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"10" style=3D"font-size: 10px; height: 10px; li=
+ne-height: 10px; mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=
+=3D"font-size: 10px; height: 10px; line-height: 10px; mso-line-height-rule:=
+ exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5717" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5717" class=3D"layout layout-row widget _widget_picture=
+ " align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5717" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://content.app-us1.com/cdn-cgi/image/onerror=3Dredirect,width=3D650,dpr=3D=
+2,fit=3Dscale-down,format=3Dauto/54Jeb/2021/06/01/b74dd89e8be872e5f60ddc859=
+0f9f8f0ec823372.png?r=3D1091525474" width=3D"155" style=3D"border: none; di=
+splay: block; outline: none; width: 155px; opacity: 1; max-width: 100%;"></=
+a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5728" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 10px; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5728" class=3D"layout layout-row widget _widget_button =
+style5728" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5728" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 5px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"td_button td_block customizable" valign=3D"top" align=3D"left"=
+ width=3D"620" style=3D"mso-line-height-rule: exactly;">
+<div class=3D"button-wrapper" style=3D"margin: 0; outline: none; padding: 0=
+; text-align: center;">
+<!--[if mso]> <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:=
+w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://anthonybrunetti=
+.acemlnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy=
+7xuFy3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"v-text-anchor:middle; wi=
+dth:272px; height:88px; font-weight: bold;" arcsize=3D"16%" strokecolor=3D"=
+#4f4d4d" strokeweight=3D"2pt" fillcolor=3D"#ff6a00" o:button=3D"true" o:all=
+owincell=3D"true" o:allowoverlap=3D"false" > <v:textbox inset=3D"2px,2px,2p=
+x,2px"> <center style=3D"color:#ffffff;font-family:Arial; font-size:20px; f=
+ont-weight: bold;line-height: 1.1;">Send My Prescription</center> </v:textb=
+ox> </v:roundrect>
+<![endif]--> <a href=3D"https://anthonybrunetti.acemlnc.com/lt.php?x=3D4lZy=
+~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQik_Ff0DYxzKpBInea957=
+70OxGYOhr13A" style=3D"margin: 0; outline: none; padding: 22px; color: #fff=
+fff; background: #ff6a00; background-color: #ff6a00; border: 2px solid #4f4=
+d4d; border-radius: 8px; font-family: Arial; font-size: 20px; display: inli=
+ne-block; line-height: 1.1; text-align: center; text-decoration: none; mso-=
+hide: all;"> <span style=3D"color:#ffffff;font-family:Arial;font-size:20px;=
+font-weight: bold;"> Send My Prescription </span> </a>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5742" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5742" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5742" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"10" style=3D"font-size: 10px; height: 10px; li=
+ne-height: 10px; mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=
+=3D"font-size: 10px; height: 10px; line-height: 10px; mso-line-height-rule:=
+ exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5743" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5743" class=3D"layout layout-row widget _widget_text st=
+yle5743" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5743" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px 20px 5px 20px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5641" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"610" style=3D"line-height: 150%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.5; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 150%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: inherit; font-weight: inherit; line-height: 1.5; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" class=3D"" data-line=
+-height=3D"1.5">
+<span class=3D"" style=3D"color: inherit; font-size: 15px; font-weight: inh=
+erit; line-height: inherit; text-decoration: inherit; font-style: italic;">=
+ </span>
+<p style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size=
+: inherit; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit; text-align: center;" class=3D""></p>
+<div data-id=3D"5487a30a" data-element_type=3D"widget" data-widget_type=3D"=
+text-editor.default" style=3D"margin: 0; outline: none; padding: 0; color: =
+#ffffff; font-size: 15px; font-weight: 400; line-height: inherit; text-deco=
+ration: inherit; font-family: arial; text-align: start;" class=3D"">
+<div style=3D"margin: 0 0px 0 0px; outline: none; padding: 0; color: inheri=
+t; font-size: inherit; font-weight: inherit; line-height: inherit; text-dec=
+oration: inherit; text-align: center;" class=3D"">
+<span style=3D"color: inherit; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit; font-style: italic;" class=3D=
+""><span style=3D"color: #93d8e6; font-size: 16px; font-weight: 700; line-h=
+eight: inherit; text-decoration: inherit; font-family: arial; font-style: n=
+ormal;">Prefer to call?</span><br style=3D""><span style=3D"color: #ffffff;=
+ font-size: 18px; font-weight: 700; line-height: inherit; text-decoration: =
+inherit; --tw-shadow: 0 0 transparent; --tw-ring-inset: ; --tw-ring-offset-=
+width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,=
+0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 trans=
+parent; font-family: arial; font-style: normal;">888-851-5333</span></span>
+</div>
+</div>
+<p class=3D"" style=3D"margin: 0; outline: none; padding: 0; color: inherit=
+; font-size: inherit; font-weight: inherit; line-height: inherit; text-deco=
+ration: inherit;"></p>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5641, #text=
+_div5641 div { line-height: 150% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5732" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5732" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5732" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"15" style=3D"mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 15px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"15" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5745" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5745" class=3D"layout layout-row widget _widget_picture=
+ " align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5745" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://content.app-us1.com/cdn-cgi/image/onerror=3Dredirect,width=3D650,dpr=3D=
+2,fit=3Dscale-down,format=3Dauto/54Jeb/2021/06/01/8a8829d3e04a7d1c1195f682c=
+c5e8033dbe88afb.png?r=3D296442198" width=3D"238" style=3D"border: none; dis=
+play: block; outline: none; width: 238px; opacity: 1; max-width: 100%;"></a=
+></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5735" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5735" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5735" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"10" style=3D"font-size: 10px; height: 10px; li=
+ne-height: 10px; mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=
+=3D"font-size: 10px; height: 10px; line-height: 10px; mso-line-height-rule:=
+ exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5744" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5744" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5744" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"15" style=3D"mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 15px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"15" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5734" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5734" class=3D"layout layout-row widget _widget_picture=
+ " align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5734" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://anthonybrunetti.img-us10.com/public//4579ca114bdd73c47c249e26ed16551d.j=
+pg?r=3D1359615574" width=3D"650" style=3D"border: none; display: block; out=
+line: none; width: 650px; opacity: 1; max-width: 100%;"></a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5733" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5733" class=3D"layout layout-row widget _widget_text st=
+yle5733" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5733" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 20px 0px 20px 0px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5631" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"650" style=3D"line-height: 130%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.3; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 130%; margin: 0; outline: none; padding: 0; colo=
+r: #ffffff; font-size: inherit; font-weight: inherit; line-height: 1.3; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"=
+1.3">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<div data-id=3D"3849843" data-element_type=3D"widget" data-widget_type=3D"t=
+ext-editor.default" style=3D"margin: 0; outline: none; padding: 0; color: #=
+ffffff; font-size: 16px; font-weight: 400; line-height: inherit; text-decor=
+ation: inherit; text-align: center; font-family: arial; font-style: normal;=
+">
+<span style=3D"color: #ffffff; font-size: 16px; font-weight: 400; line-heig=
+ht: inherit; text-decoration: inherit; font-family: arial; font-style: norm=
+al;" class=3D""><a href=3D"https://anthonybrunetti.acemlnc.com/lt.php?x=3D4=
+lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQik_Ff0DYxzKpBInea=
+95770OxGYOhr13A" data-ac-default-color=3D"1" target=3D"_blank" style=3D"mar=
+gin: 0; outline: none; padding: 0; color: #f4ffad; text-decoration: underli=
+ne; --tw-shadow: 0 0 transparent; --tw-ring-inset: ; --tw-ring-offset-width=
+: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5);=
+ --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparen=
+t; font-family: arial; font-weight: 700; font-size: 16px; font-style: norma=
+l;"><span style=3D"color: inherit; font-size: inherit; font-weight: inherit=
+; line-height: inherit; text-decoration: inherit; --tw-shadow: 0 0 transpar=
+ent; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color=
+: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0=
+ transparent; --tw-ring-shadow: 0 0 transparent; font-family: arial;">Order=
+ Prescriptions & Refills</span></a><br style=3D""><span style=3D"color: #93=
+d8e6; font-size: 16px; font-weight: 700; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal;">Sent to the Pharmacy=
+ You Choose.<br></span><br><span style=3D"color: #ffffff; font-size: 16px; =
+font-weight: 700; line-height: inherit; text-decoration: inherit; font-fami=
+ly: arial; font-style: normal;">29 million </span><span style=3D"color: #ff=
+ffff; font-size: 16px; font-weight: 700; line-height: inherit; text-decorat=
+ion: inherit; font-family: arial; font-style: normal;">members</span><span =
+style=3D"color: #ffffff; font-size: 16px; font-weight: 700; line-height: in=
+herit; text-decoration: inherit; font-family: arial; font-style: normal;"> =
+trust TelMDFirst.</span></span>
+</div>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5631, #text=
+_div5631 div { line-height: 130% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr id=3D"layout-row5748" class=3D"layout layout-row clear-this " style=3D"=
+mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-padding5748" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout_table_628b6d287bd9bb7c2d7591890856bf96a0634b0a" valign=3D"=
+top" width=3D"325" style=3D"mso-line-height-rule: exactly; background-color=
+: #1c375c;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout lay=
+out-table " width=3D"325" style=3D"-ms-text-size-adjust: auto; -webkit-text=
+-size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-width: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1c37=
+5c;">
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5746" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5746" class=3D"layout layout-row widget _widget_text st=
+yle5746" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5746" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 10px 0px 10px 0px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5644" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"325" style=3D"line-height: 100%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1; text-decoration: inherit; font-family=
+: arial;">
+<div data-line-height=3D"1" style=3D"line-height: 100%; margin: 0; outline:=
+ none; padding: 0; color: #93d8e6; font-size: 16px; font-weight: inherit; l=
+ine-height: 1; text-decoration: inherit; mso-line-height-rule: exactly; fon=
+t-family: arial;">
+<ul style=3D"margin: 0 0px 0 40px; padding: 0; --tw-shadow: 0 0 transparent=
+; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #=
+fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 tr=
+ansparent; --tw-ring-shadow: 0 0 transparent; color: #93d8e6; font-family: =
+arial; font-size: 16px; font-style: normal; font-weight: 400; text-align: c=
+enter;">
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0px 0 3px !important; --tw-shadow: 0 0 transparent; --tw-ring-=
+inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ri=
+ng-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; -=
+-tw-ring-shadow: 0 0 transparent; text-align: left; color: #93d8e6;"><span =
+style=3D"color: #93d8e6; font-size: 16px; font-weight: 400; line-height: in=
+herit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-in=
+set: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-family: arial; font-style: normal;">Se=
+cure treatment by phone or text<br><br></span></li>
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0px 0 3px !important; --tw-shadow: 0 0 transparent; --tw-ring-=
+inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ri=
+ng-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; -=
+-tw-ring-shadow: 0 0 transparent; text-align: left; color: #93d8e6;"><span =
+style=3D"color: inherit; font-size: inherit; font-weight: inherit; line-hei=
+ght: inherit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-=
+ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --=
+tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transpare=
+nt; --tw-ring-shadow: 0 0 transparent; font-family: arial;">100% refund if =
+we can't treat you</span></li>
+</ul>
+<br>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5644, #text=
+_div5644 div { line-height: 100% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+<td id=3D"layout_table_1a28f401e262ab6ab121ca5a0ad60354154102f5" valign=3D"=
+top" width=3D"325" style=3D"mso-line-height-rule: exactly; background-color=
+: #1c375c;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout lay=
+out-table " width=3D"325" style=3D"-ms-text-size-adjust: auto; -webkit-text=
+-size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-width: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1c37=
+5c;">
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5747" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5747" class=3D"layout layout-row widget _widget_text st=
+yle5747" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5747" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 10px 0px 10px 0px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5645" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"325" style=3D"mso-line-height-rule: exactly; margin: 0; outl=
+ine: none; padding: 0; color: inherit; font-size: 12px; font-weight: inheri=
+t; line-height: 1; text-decoration: inherit; font-family: arial;">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #93d8e6; font-si=
+ze: 16px; font-weight: inherit; line-height: inherit; text-decoration: inhe=
+rit; font-family: arial;">
+<ul style=3D"margin: 0 0px 0 40px; padding: 0; --tw-shadow: 0 0 transparent=
+; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #=
+fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 tr=
+ansparent; --tw-ring-shadow: 0 0 transparent; color: #93d8e6; font-family: =
+arial; font-size: 16px; font-style: normal; font-weight: 400; text-align: c=
+enter;">
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0px 0 3px !important; --tw-shadow: 0 0 transparent; --tw-ring-=
+inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ri=
+ng-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; -=
+-tw-ring-shadow: 0 0 transparent; text-align: left; color: #93d8e6;"><span =
+style=3D"color: #93d8e6; font-size: 16px; font-weight: 400; line-height: in=
+herit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-in=
+set: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-family: arial; font-style: normal;">U.=
+S. board-certified doctors<br><br></span></li>
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0px 0 3px !important; --tw-shadow: 0 0 transparent; --tw-ring-=
+inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ri=
+ng-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; -=
+-tw-ring-shadow: 0 0 transparent; text-align: left; color: #93d8e6;"><span =
+style=3D"color: #93d8e6; font-size: 16px; font-weight: 400; line-height: in=
+herit; text-decoration: inherit; --tw-shadow: 0 0 transparent; --tw-ring-in=
+set: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring=
+-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --t=
+w-ring-shadow: 0 0 transparent; font-family: arial; font-style: normal;" cl=
+ass=3D"">Upfront pricing. No hidden fees.</span></li>
+</ul>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5730" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5730" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5730" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"10" style=3D"font-size: 10px; height: 10px; li=
+ne-height: 10px; mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=
+=3D"font-size: 10px; height: 10px; line-height: 10px; mso-line-height-rule:=
+ exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5739" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5739" class=3D"layout layout-row widget _widget_picture=
+ " align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5739" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://anthonybrunetti.img-us10.com/public//13b21a1457648d257143bd0bce7b04e3.j=
+pg?r=3D1925852934" width=3D"650" style=3D"border: none; display: block; out=
+line: none; width: 650px; opacity: 1; max-width: 100%;"></a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5725" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5725" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5725" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"20" style=3D"mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"20" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5729" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5729" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5729" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"10" style=3D"font-size: 10px; height: 10px; li=
+ne-height: 10px; mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=
+=3D"font-size: 10px; height: 10px; line-height: 10px; mso-line-height-rule:=
+ exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5738" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5738" class=3D"layout layout-row widget _widget_text st=
+yle5738" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5738" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px 60px 20px 60px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5636" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"530" style=3D"line-height: 150%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.5; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 150%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: inherit; font-weight: inherit; line-height: 1.5; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"=
+1.5">
+<span class=3D"" style=3D"color: inherit; font-size: 10px; font-weight: inh=
+erit; line-height: inherit; text-decoration: inherit;"> </span>
+<p style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-size=
+: inherit; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit; text-align: center;"><span style=3D"color: inherit; font-size: 16px; =
+font-weight: inherit; line-height: inherit; text-decoration: inherit;"><spa=
+n style=3D"color: #ffffff; font-size: 16px; font-weight: 400; line-height: =
+inherit; text-decoration: inherit; font-family: arial; font-style: normal;"=
+>Complete your visit </span><a href=3D"https://anthonybrunetti.acemlnc.com/=
+lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQik_Ff=
+0DYxzKpBInea95770OxGYOhr13A" data-ac-default-color=3D"1" target=3D"_blank" =
+style=3D"margin: 0; outline: none; padding: 0; color: #f4ffad; text-decorat=
+ion: underline; --tw-shadow: 0 0 transparent; --tw-ring-inset: ; --tw-ring-=
+offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,1=
+30,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 =
+0 transparent; font-family: arial; font-weight: 400; font-size: 16px; font-=
+style: normal;"><span style=3D"color: inherit; font-size: inherit; font-wei=
+ght: inherit; line-height: inherit; text-decoration: inherit; --tw-shadow: =
+0 0 transparent; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-=
+offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset=
+-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; font-family: a=
+rial;">online</span></a><span style=3D"color: #ffffff; font-size: 16px; fon=
+t-weight: 400; line-height: inherit; text-decoration: inherit; font-family:=
+ arial; font-style: normal;">.</span><br style=3D""><span style=3D"color: #=
+ffffff; font-size: 16px; font-weight: 400; line-height: inherit; text-decor=
+ation: inherit; font-family: arial; font-style: normal;">100% refund if we =
+can't treat you.</span><br></span></p>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5636, #text=
+_div5636 div { line-height: 150% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr id=3D"layout-row5749" class=3D"layout layout-row clear-this " style=3D"=
+mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-padding5749" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout_table_ab0e1b82bd13e085fda9c61a31b640571a8d1f4d" valign=3D"=
+top" width=3D"325" style=3D"mso-line-height-rule: exactly; background-color=
+: #1c375c;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout lay=
+out-table " width=3D"325" style=3D"-ms-text-size-adjust: auto; -webkit-text=
+-size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-width: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1c37=
+5c;">
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5721" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5721" class=3D"layout layout-row widget _widget_picture=
+ style5721" align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5721" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 20px 0 20px 0;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"325" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://anthonybrunetti.img-us10.com/public//300c241bf1bbb9d890a13f35868a927f.p=
+ng?r=3D1009824494" width=3D"238" style=3D"border: none; display: block; out=
+line: none; width: 238px; opacity: 1; max-width: 100%;"></a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+<td id=3D"layout_table_3d10871c5afdf7c6826e99abf991db6c4e5da199" valign=3D"=
+top" width=3D"325" style=3D"mso-line-height-rule: exactly; background-color=
+: #1c375c;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"layout lay=
+out-table " width=3D"325" style=3D"-ms-text-size-adjust: auto; -webkit-text=
+-size-adjust: 100%; border-collapse: collapse; font-size: 14px; min-width: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #1c37=
+5c;">
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5727" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0px; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5727" class=3D"layout layout-row widget _widget_picture=
+ style5727" align=3D"center" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5727" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 20px 0px 40px 0px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"image-td" align=3D"center" valign=3D"top" width=3D"325" style=
+=3D"mso-line-height-rule: exactly;"><a href=3D"https://anthonybrunetti.acem=
+lnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy=
+3XQik_Ff0DYxzKpBInea95770OxGYOhr13A" style=3D"margin: 0; outline: none; pad=
+ding: 0; color: #f4ffad; display: block; min-width: 100%;"><img src=3D"http=
+s://anthonybrunetti.img-us10.com/public//03a0c798b1bad112afa7a292c23a06c6.p=
+ng?r=3D2028633490" width=3D"236" style=3D"border: none; display: block; out=
+line: none; width: 236px; opacity: 1; max-width: 100%;"></a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5720" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5720" class=3D"layout layout-row widget _widget_text st=
+yle5720" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5720" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 30px 0px 20px 0px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5618" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"650" style=3D"line-height: 130%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.3; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 130%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: inherit; font-weight: inherit; line-height: 1.3; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"=
+1.3">
+<div style=3D"margin: 0; outline: none; padding: 0; color: inherit; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<span style=3D"color: inherit; font-size: 19px; font-weight: inherit; line-=
+height: inherit; text-decoration: inherit; text-align: inherit;" class=3D""=
+><span style=3D"color: #93d8e6; font-size: 16px; font-weight: 700; line-hei=
+ght: inherit; text-decoration: inherit; font-family: arial; font-style: nor=
+mal;">New Prescriptions & Refills<br></span><span style=3D"color: #ffffff; =
+font-size: 16px; font-weight: 400; line-height: inherit; text-decoration: i=
+nherit; font-family: arial; font-style: normal;">Doctors Available 24/7</sp=
+an></span>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5618, #text=
+_div5618 div { line-height: 130% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5737" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr id=3D"layout-row5737" class=3D"layout layout-row widget _widget_spacer =
+" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5737" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"10" style=3D"font-size: 10px; height: 10px; li=
+ne-height: 10px; mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"10" width=3D"650" style=
+=3D"font-size: 10px; height: 10px; line-height: 10px; mso-line-height-rule:=
+ exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5722" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5722" class=3D"layout layout-row widget _widget_text st=
+yle5722" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5722" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 40px 0px 20px 0px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5620" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"650" style=3D"line-height: 130%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.3; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 130%; margin: 0; outline: none; padding: 0; colo=
+r: #ffffff; font-size: inherit; font-weight: inherit; line-height: 1.3; tex=
+t-decoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"=
+1.3">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<span style=3D"color: inherit; font-size: 19px; font-weight: inherit; line-=
+height: inherit; text-decoration: inherit;">Connect with us:</span>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5620, #text=
+_div5620 div { line-height: 130% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5724" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0px; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5724" class=3D"layout layout-row widget _widget_social =
+style5724" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5724" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0px 10px 0px 10px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td style=3D"mso-line-height-rule: exactly;">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" style=3D"-ms-text=
+-size-adjust: auto; -webkit-text-size-adjust: 100%; border-collapse: collap=
+se; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td width=3D"650" align=3D"left" style=3D"mso-line-height-rule: exactly;">
+<center style=3D"margin: 0; outline: none; padding: 0; font-size: 0px;">
+<table class=3D"_ac_social_table" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" style=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: =
+100%; border-collapse: collapse; font-size: 0; min-width: auto!important; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; margin: auto!important; displa=
+y: inline-block!important; text-align: center!important;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://anthonybrunetti.acemlnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-=
+d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQik_Ff0DYxzKpBInea95770OxGYOhr13E"=
+ id=3D"facebook" class=3D"__ac_social_icon_link" style=3D"margin: 0; outlin=
+e: none; padding: 0; color: #f4ffad;"><img src=3D"https://anthonybrunetti.i=
+mg-us3.com/_social_/flat-color-round-facebook.png" border=3D"0" alt=3D"Face=
+book" width=3D"34" style=3D"border: none;"></a>
+</div></td>
+<td width=3D"10" style=3D"mso-line-height-rule: exactly; display: inline-bl=
+ock!important; font-size: 0; width: 10px!important;"> </td>
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://anthonybrunetti.acemlnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-=
+d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQik_Ff0DYxzKpBInea95770OxGYOhr13I"=
+ id=3D"twitter" class=3D"__ac_social_icon_link" style=3D"margin: 0; outline=
+: none; padding: 0; color: #f4ffad;"><img src=3D"https://anthonybrunetti.im=
+g-us3.com/_social_/flat-color-round-twitter.png" border=3D"0" alt=3D"Twitte=
+r" width=3D"34" style=3D"border: none;"></a>
+</div></td>
+<td width=3D"10" style=3D"mso-line-height-rule: exactly; display: inline-bl=
+ock!important; font-size: 0; width: 10px!important;"> </td>
+<td align=3D"center" valign=3D"middle" width=3D"34" style=3D"mso-line-heigh=
+t-rule: exactly; display: inline-block!important; font-size: 0; width: 34px=
+!important;">
+<div class=3D"__ac_social_icons" style=3D"margin: 0; outline: none; padding=
+: 0;">
+<a href=3D"https://anthonybrunetti.acemlnc.com/lt.php?x=3D4lZy~GDJIIHM7pWv-=
+d9MVuSe1nQgkQT0k-5lYXI7UITN5s4vyUy7xuFy3XQik_Ff0DYxzKpBInea95770OxGYOhr13M"=
+ id=3D"linkedin" class=3D"__ac_social_icon_link" style=3D"margin: 0; outlin=
+e: none; padding: 0; color: #f4ffad;"><img src=3D"https://anthonybrunetti.i=
+mg-us3.com/_social_/flat-color-round-linkedin.png" border=3D"0" alt=3D"Link=
+edin" width=3D"34" style=3D"border: none;"></a>
+</div></td>
+</tr>
+</table>
+</center></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5736" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5736" class=3D"layout layout-row widget _widget_text st=
+yle5736" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0;">
+<td id=3D"layout-row-padding5736" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 20px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5634" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"610" style=3D"line-height: 130%; mso-line-height-rule: exact=
+ly; margin: 0; outline: none; padding: 0; color: inherit; font-size: 12px; =
+font-weight: inherit; line-height: 1.3; text-decoration: inherit; font-fami=
+ly: arial;">
+<div style=3D"line-height: 130%; margin: 0; outline: none; padding: 0; colo=
+r: inherit; font-size: 12px; font-weight: inherit; line-height: 1.3; text-d=
+ecoration: inherit; mso-line-height-rule: exactly;" data-line-height=3D"1.3=
+">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit;">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<div data-id=3D"3849843" data-element_type=3D"widget" data-widget_type=3D"t=
+ext-editor.default" style=3D"margin: 0; outline: none; padding: 0; color: #=
+ffffff; font-size: inherit; font-weight: 400; line-height: inherit; text-de=
+coration: inherit; text-align: center; font-family: arial; font-style: norm=
+al;">
+<span style=3D"color: #ffffff; font-size: inherit; font-weight: 400; line-h=
+eight: inherit; text-decoration: inherit; font-family: arial; font-style: n=
+ormal;" class=3D"">*If the doctor believes medication is warranted, he or s=
+he can write a prescription and send it directly to the pharmacy of your ch=
+oice. Please be aware that we do not prescribe controlled substances, nor d=
+o we prescribe certain other medications. And finally, TelMdFirst's partner=
+s do not guarantee a prescription will be written; that will be determined =
+by the physician, based on your clinical presentation.</span>
+</div>
+</div>
+</div>
+</div><!--[if (gte mso 12)&(lte mso 15) ]>
+<style data-ac-keep=3D"true" data-ac-inline=3D"false"> #text_div5634, #text=
+_div5634 div { line-height: 130% !important; };
+</style>
+<![endif]--></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5723" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5723" class=3D"layout layout-row widget _widget_spacer =
+style5723" style=3D"mso-line-height-rule: exactly;">
+<td id=3D"layout-row-padding5723" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; padding: 0;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td valign=3D"top" height=3D"50" style=3D"mso-line-height-rule: exactly;">
+<div class=3D"spacer" style=3D"margin: 0; outline: none; padding: 0; height=
+: 50px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td class=3D"spacer-body" valign=3D"top" height=3D"50" width=3D"650" style=
+=3D"mso-line-height-rule: exactly;"> </td>
+</tr>
+</table>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr style=3D"mso-line-height-rule: exactly; background-color: #1c375c;">
+<td id=3D"layout-row-margin5719" valign=3D"top" style=3D"mso-line-height-ru=
+le: exactly; padding: 0; background-color: #1c375c;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: initial !important; font-size: 14px; min-width: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt;">
+<tr id=3D"layout-row5719" class=3D"layout layout-row widget _widget_text st=
+yle5719" style=3D"mso-line-height-rule: exactly; margin: 0; padding: 0; bac=
+kground-color: #242c33;">
+<td id=3D"layout-row-padding5719" valign=3D"top" style=3D"mso-line-height-r=
+ule: exactly; background-color: #242c33; padding: 30px 20px 30px 20px;">
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"-ms-text-size-adjust: auto; -webkit-text-size-adjust: 100%; border-col=
+lapse: collapse; font-size: 14px; min-width: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;">
+<tr style=3D"mso-line-height-rule: exactly;">
+<td id=3D"text_div5617" class=3D"td_text td_block" valign=3D"top" align=3D"=
+left" width=3D"610" style=3D"mso-line-height-rule: exactly; margin: 0; outl=
+ine: none; padding: 0; color: inherit; font-size: 12px; font-weight: inheri=
+t; line-height: 1; text-decoration: inherit; font-family: arial;">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit;">
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<span style=3D"color: #ffffff; font-size: inherit; font-weight: inherit; li=
+ne-height: inherit; text-decoration: inherit;" class=3D""><span style=3D"co=
+lor: #ffffff; font-size: inherit; font-weight: inherit; line-height: inheri=
+t; text-decoration: inherit;" class=3D"">TelMDFirst.com<br>30 N Gould St.<b=
+r>Ste R<br>Sheridan, WY 82801<br>United States</span><br style=3D"color: #f=
+fffff;"></span>
+</div>
+<div style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: center;">
+<a href=3D"http://anthonybrunetti.activehosted.com/proc.php?c=3D171&m=3D229=
+&s=3D63ac89fb4774c2809f669f61fcdd0af1&d=3D1798282&v=3D2&nl=3D1&act=3Dunsub"=
+ style=3D"margin: 0; outline: none; padding: 0; color: #ffffff; text-decora=
+tion: underline;" class=3D"" target=3D"_blank"><span style=3D"color: #fffff=
+f; font-size: inherit; font-weight: inherit; line-height: inherit; text-dec=
+oration: inherit;" class=3D"">Unsubscribe me</span></a>
+<br style=3D"color: #ffffff;">
+</div>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+------=_Part_10707013_1823167651.1776187574087--

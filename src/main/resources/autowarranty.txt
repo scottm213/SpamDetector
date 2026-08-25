@@ -1,0 +1,646 @@
+Delivered-To: waddledeebuilds@gmail.com
+Received: by 2002:ab3:1283:0:b0:274:c53:23e7 with SMTP id c3csp967391ltc;
+        Sat, 12 Oct 2024 05:55:28 -0700 (PDT)
+X-Received: by 2002:a17:907:72c3:b0:a99:faf4:50e4 with SMTP id a640c23a62f3a-a99faf45183mr1955466b.56.1728737728530;
+        Sat, 12 Oct 2024 05:55:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1728737728; cv=none;
+        d=google.com; s=arc-20240605;
+        b=OAs/x/iXAljBz0MEunCoZBGY3BSJw9cYa9FqX1PUrJHr/yGSDuMUMKfF+aIbMgaYlP
+         iZCHLUvbpp8fuKvgq4VZoZQ/33tgPfgJz9vwSVF+MwdSNUnOlpKFi8ElcFViUW++X7Kz
+         lJbjflLlxJZILAnyV3ILHPw4D7Sy0SFgvMIyxRBnEHRfEnldVR0f6nDy5JPWA3bwT6Gh
+         HaPb9KjkhWxmmYnQBAvASr/rWC1AV1qr5e9bjZROuE9yPlDJF5xe1NnwGqtbWYsVqtnd
+         ky7N/7qonok+zTwRU9N+9qgr8Fx/2ADwc2c2QQHsfdXSBOXVtUeoJ+mwgP3T2EG67mDT
+         gy1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-id:date:list-unsubscribe:mime-version:cc:to:references
+         :subject:feedback-id:bimi-selector:list-id:content-transfer-encoding
+         :campaign_id:from:message-id:dkim-signature;
+        bh=pLo8iI8nhq3DqDJQcL1K+dFKgHkoRtBuokTsl5DrfAs=;
+        fh=E2mpzg134qxHW0HoADZ2U7MsT7d+m3T9jX4ILEBbfr4=;
+        b=I+27a6iEHpgeD1752Z0GD9g5Da4rxbISTabcmrW+rEFFKku+A+rftGvjJavGiNiekq
+         +wnK5EPK7+miEWrglqm/tEAcDSuuxq5XKksY8iyljYEGm7SDnf7/Mgtfoz2RHlwbZr+B
+         Cq0lMbxUmxh96Xlrz4ssaB4FuoPzfpSvh4bkG5U7mrsBEk/BFmKsibaf4RImhP211IGk
+         g5SoRgv382m2DbYCmnjMav4phz+HH+xQTFx+bINRa1SJOMYIRPe/BQRnFzA+j6mYfGEt
+         zsf3zOU7Yi9VWCL7WwiHefDLQLI09EMsnvTuEr2bbf2w5tPqgSwn5StDZhkzFX8IBv3J
+         yvSw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=R4s9ouB1;
+       spf=pass (google.com: domain of cocraji11@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=cocraji11@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <cocraji11@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a640c23a62f3a-a99f375ddddsor22048066b.3.2024.10.12.05.55.28
+        for <waddledeebuilds@gmail.com>
+        (Google Transport Security);
+        Sat, 12 Oct 2024 05:55:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of cocraji11@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=R4s9ouB1;
+       spf=pass (google.com: domain of cocraji11@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=cocraji11@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1728737726; x=1729342526; dara=google.com;
+        h=content-id:date:list-unsubscribe:mime-version:cc:to:references
+         :subject:feedback-id:bimi-selector:list-id:content-transfer-encoding
+         :campaign_id:from:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=pLo8iI8nhq3DqDJQcL1K+dFKgHkoRtBuokTsl5DrfAs=;
+        b=R4s9ouB1exjeo1kOBdgZRhE4asNphs+OLNKDIyE1lK49cRB0Il6M0n4aJkr56XDPu9
+         Q/scHIBX8Uafq79DLhbJ7CLkOmxfTlEj+CjUwPfNA4O1/btwJnIeMsbtHIjPke2BrjmE
+         5ioxPYyvbAVdIIu4fQeuYCKVxEO/cg/rJ0v8SrZTt/tlmz4pOl2l05EcxEKB3JVbsvlh
+         O5DMgRtIgo0xoJFZgAkm9YUeBd7wu6LR7XaDocb7czJw1jAGPBkzPNekduJNYOJPD9lz
+         iMnXzhcuOlZ1sEQsZ0YACINbPhn3KhNbPZPTspvhlO6JjgfUJspaU05XhSXzYS5gWO3G
+         t1Iw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728737726; x=1729342526;
+        h=content-id:date:list-unsubscribe:mime-version:cc:to:references
+         :subject:feedback-id:bimi-selector:list-id:content-transfer-encoding
+         :campaign_id:from:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=pLo8iI8nhq3DqDJQcL1K+dFKgHkoRtBuokTsl5DrfAs=;
+        b=LQrMAFPysArEhir1hYzxHTAG2NVzeW6d4XtNCJZXre53cWaRXtBoy5wzsxPUx36PSJ
+         Y3VoTradT9GJ8A2liX1AsBqiSVNlloJOPUp2jEP5n+nnLNGU5XA3aKeu1ENU3PzFDxDG
+         YEb/5MK6o6BhZTCrFPh9y3wS/THWAShMOASJEa8IPkeTBG7q7zfcFsNNSOGai77fzBVD
+         but+Hm0PGMCCNADVakeU3fZLFhERwtZmzNWGmvwH19xOwbJiqE5MPP6cI4gDFVuTK4Cx
+         u+NoX9d9BDlQwxWdp+mRR8Rlmyxhjtq8ScrSX6g65wjgmhoY3oaoKqqnr7GJ4aZILB4P
+         yIaQ==
+X-Gm-Message-State: AOJu0YzDcRnjVQR8UTxqGIOAmyWAqCDwmqo19kWiDeqz8DU/tnoYgt8L
+	a267m8uE70N4Drqj0OcHCLxdwyhrFH+i24JRRL/q2lto7KMrKC3LE19tTM1rSpfg3Nii
+X-Google-Smtp-Source: AGHT+IHD2oqlhcccTTk61PWPoLQ6Kwv6auBTt4+xPcUdCEdXPGH42tj/LKVpIungvzbfcbbrynIxCg==
+X-Received: by 2002:a17:907:f15e:b0:a99:48a8:5a1c with SMTP id a640c23a62f3a-a99b9604446mr496482566b.40.1728737726198;
+        Sat, 12 Oct 2024 05:55:26 -0700 (PDT)
+Return-Path: <cocraji11@gmail.com>
+Received: from betofortexas.com ([134.209.186.231])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a99ecbf5972sm69723466b.99.2024.10.12.05.55.25
+        for <waddledeebuilds@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 12 Oct 2024 05:55:25 -0700 (PDT)
+Message-ID: <836943697306.oicy5vx0pgs8jyassjgj3yg7729k@email.amazonses.com>
+From:  carshield sh <cocraji11@gmail.com>
+campaign_id: 913124
+Content-Transfer-Encoding: 8bit
+X-Campaign: 80540874/2802020686/836943697306
+List-ID: <7202599.xt.local>
+X-Info: abuser@gizmodo.com
+BIMI-Selector: v=BIMI1; s=fb2023q1v3;
+Feedback-ID: 10744520:7885913282:66.231.66.147:gizmodo
+Subject: Re :  &Has ur auto warranty expired& sh
+X-SG-EID: HDFE3MQVVO/oYVjRcihOTAYZNiNWMUeNotkygMVHZwrOzWbtywkJOmJrZNllDAfblbqzTP+/qnaggnv7ycnl2k/jcbkwt/ajffGihFYuwTWSaDnv0e5MXxFkIeC9MOMYWL+A94Ws4VvirzsycSWUIfcepg3L1mrxaXIrdaK5op56773rIV6jLOAVFQ/nuruh/GGTqZmiKLfPY9HhSb6EGM5AayvpVKF3UdhdbMQ97I9rz10A4+6STdzo8HO6m1ypW/nJmBgmpU7s8wUVLdx7HMIW1jcaljJH1WsG==?
+References: <@mail-vlcqppfootb.gizmodo.com>
+To: "waddledeebuilds@gmail.com" <waddledeebuilds@gmail.com>
+CC: "waddledeebuilds@gmail.com" <waddledeebuilds@gmail.com>
+X-Feedback-ID: 80540874:SG
+Content-Type: multipart/parallel;boundary="--==mimepart_IYq6rn2Gn5xchwbcpq_LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH"
+MIME-Version: 1.0
+List-Unsubscribe: <https://elink.gizmodo.com/oc/6458c5ac5f14700184058917je74n.231b/7b80de18>, <mailto:unsubscribe_20230831182323.32575127.97247@mx.gizmodo.com>
+Date: Sat, 12 Oct 2024 13:54:59 +0100
+Content-Id: <QR1YRMWTGQHO.LG7EHTMCEHPL2@IUHMYGJEI1H1RD.gizmodo.com>
+X-Feedback-ID: 1835:32575137:campaign:gizmodo
+X-Feedback-ID: 1251838SG
+
+----==mimepart_IYq6rn2Gn5xchwbcpq_LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH
+Content-Type: multipart/parallel; boundary="_-------6STdzo8HO6m1ypW.NcwDKp8Ngl-28020206866STdzo8HO6m1ypW.NcwDKp8Ngl=:"
+
+--===============5946771471464421479==
+Content-Type: text/html; charset="utf-8"
+
+--_-------6STdzo8HO6m1ypW.NcwDKp8Ngl-28020206866STdzo8HO6m1ypW.NcwDKp8Ngl=:
+Content-Type: multipart/alternative; boundary="_----------=bollin6STdzo8HO6m1ypW.NcwDKp8Ngl"
+
+
+--_----------=bollin6STdzo8HO6m1ypW.NcwDKp8Ngl
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 00
+<div id="emailPreHeader" style="mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0; display:none !important;">Vercel Firewall | v0 Projects | Next.js Conf 2024</div>
+<img width="1" height="1" style="display:none !important;" alt="" />
+ 
+<table class="full-container darkmodebg" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0; border-collapse: collapse;margin: 0 auto;"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" style="background-color:#ffffff;"> 
+<table class="main" id="outer_table" width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0; border-collapse: collapse; min-width: 600px; width: 600px; margin: 0 auto;"> 
+<tbody> 
+<tr> 
+<td class="mktoContainer" id="template-wrapper">
+<table class="mktoModule" id="banner1" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="60" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td align="center"> <a href=
+"=" target="_blank"
+><img width="64" height="auto" border="0" style="height: auto !important; -ms-interpolation-mode: bicubic !important; "> 
+<div class="dark-img" style="display:none; visibility:hidden;" align="center"> 
+<img width="64" height="auto" border="0" style="height: auto !important; -ms-interpolation-mode: bicubic !important; "> 
+</div> </a> </td> 
+</tr> 
+<tr> 
+<td height="20" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td align="center" style="font-family: 'Geist', sans-serif; color: #000000; font-size: 38px; line-height: 46px; mso-line-height-rule: exactly; text-align: center; font-weight: 600; letter-spacing: -.04em;"> 
+<div class="mktoText" id="bannerhead"> 
+<p><b>Vercel Product Update</b></p> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="10" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td align="center" style="font-family: 'Geist', sans-serif; color: #444444; font-size: 16px; line-height: 24px; mso-line-height-rule: exactly; text-align: center;"> 
+<div class="mktoText" id="bannertext"> 
+<div>
+ Vercel Firewall | v0 Projects | Next.js Conf 2024 
+</div> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="60" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModulehd87e46df6-b257-4978-8304-71b2ce3408da" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="1" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #000000; font-size: 24px; line-height: 28px; mso-line-height-rule: exactly; text-align: left; font-weight: 600; letter-spacing: -.04em;"> 
+<div class="mktoText" id="bannerheadthb053c7ab5-a372-4c39-86ce-f6303c5b6d2f"> 
+<div> 
+<b>Vercel Firewall</b> 
+</div> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="bnr-Module" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="main darkmodebg" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td align="center" style="text-align: center;"> 
+<div class="mktoImg light-img" id="video-img" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="314" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> 
+<div class="mktoImg dark-img" id="video-imgdk" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="314" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModuleco" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #444444; font-size: 14px; line-height: 24px; mso-line-height-rule: exactly; text-align: left; font-weight: 400;"> 
+<div class="mktoText" id="bannertextthb"> 
+<p>We've made improvements to the Vercel Web Application Firewall (WAF) to further enhance traffic control:</p> 
+<ul> 
+<li><b>Persistent actions:</b> Block repeat offenders by applying rules across all matching requests for a customizable duration</li> 
+<li><b>Rate limiting:</b> Set request limits on specific endpoints to prevent API abuse while maintaining performance for legitimate users</li> 
+<li><b>Firewall API:</b> Programmatically control WAF settings to automate security workflows and integrate with third-party tools</li> 
+</ul> 
+<p><a href=
+"" target="_blank" style="color: #000000; text-decoration: underline;" class="mktNoTok"
+>Learn More</a></p> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="0" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="DividerModule0a6e0f1e-3b63-433e-a8d0-ec7efbb5addf" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td height="40" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="center" bgcolor="#EAEAEA" height="1" style="line-height:1px;font-size:1px; background-color: #EAEAEA;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td height="40" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModulehd04573184-1e82-420e-bcd8-222e0e25cbed" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="1" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #000000; font-size: 24px; line-height: 28px; mso-line-height-rule: exactly; text-align: left; font-weight: 600; letter-spacing: -.04em;"> 
+<div class="mktoText" id="bannerheadthb576a1001-7964-40d8-9dbb-2e5cd79e89a3"> 
+<div> 
+<b>v0 Projects</b> 
+</div> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="bnr-Module206be442-551c-403a-8f71-9772b4090fa8" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="main darkmodebg" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td align="center" style="text-align: center;"> 
+<div class="mktoImg light-img" id="video-imga58e7515-9f82-486c-a4c0-3f65d443be27" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="300" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> 
+<div class="mktoImg dark-img" id="video-imgdk4de2a279-f9ea-4129-93d1-0e3e8f3a0363" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="299" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModuleco05c80b2c-e71c-4a13-a2b7-a8ac77199b76" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #444444; font-size: 14px; line-height: 24px; mso-line-height-rule: exactly; text-align: left; font-weight: 400;">
+
+
+--_----------=yo6a0Fr_--==mimepart_IYq6rn2Gn5xchwbcpq_LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH
+Content-Type: text/html; charset=utf-8
+
+
+
+--_----------=bollin6STdzo8HO6m1ypW.NcwDKp8Ngl
+Content-Type: text/html; charset=utf-8
+<center>
+<strong>
+<a href="https://6STdzo8HO6m1ypW-forsrhyfpdlyovk.campaign-view.com/click/1106eab35e47d37c8/1106eab35e47d352e#cl!qKD3DeyQEqpeCa7CZEfbvDJkd!d=80700_smd!NcwDKp8Ngl!c=1097318!KxQcM2Ow6qN7A!l=191!Cx5DY6243Grx0INeuFtvF3urPR2t8Qcln2NSgydSAZ7s!o=1508!LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH!v=2634!l65PSh5htzGMzb!m=1014!CMYTfIxabYGqT4RPZfvjiVhDdROsGvlsr21Up4vDa?0TVL8k5WGpD4FquPbr2uwnBXEB24tJXRhM5bUkxV5Kgir" style="
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ee3729;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;">
+Gеt A High Lеvеl Of Vеhiclе Pгotеction Foг A Low Monthly Cost</a> 
+</strong><br><br>
+<div style="text-align: center;">
+<img src="https://ci3.googleusercontent.com/mail-sig/AIorK4yMFk6fbjiCHbqpHPCbAC2gS7EkjY6OjFtDvbzYuAmX77RUodIEOzg35--xMiatsqEyXO7zDYBRyNPy?ukylejrgjbdudkhmeogkrocdpslzxkedgrrsfddnajpvhitzjquivjwjhxhwdrkxonsjtfslbtxeveccfpofdtiwzoegzjnvixtofwuvwzfimlvcawgvpvbxaffdcsfrsxipikjgxxyhqfnglcrgdwkgthrrgwlfjgstpppeimxvhvjbmecdhbiqexgumovojvsgfnrw" usemap="#i6tzoqst7yo5clptrp4v5ym7vuo3v5dplelilsqueyhbseyubxgyc3232kioebcr0ruijuopokw6lewo9bojxu39q8cqk71mx0f8" alt="">
+<map name="i6tzoqst7yo5clptrp4v5ym7vuo3v5dplelilsqueyhbseyubxgyc3232kioebcr0ruijuopokw6lewo9bojxu39q8cqk71mx0f8">
+    <area target="" alt="" title="" href="https://6STdzo8HO6m1ypW-forsrhyfpdlyovk.campaign-view.com/click/1106eab35e47d37c8/1106eab35e47d352e#cl!qKD3DeyQEqpeCa7CZEfbvDJkd!d=80700_smd!NcwDKp8Ngl!c=1097318!KxQcM2Ow6qN7A!l=191!Cx5DY6243Grx0INeuFtvF3urPR2t8Qcln2NSgydSAZ7s!o=1508!LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH!v=2634!l65PSh5htzGMzb!m=1014!CMYTfIxabYGqT4RPZfvjiVhDdROsGvlsr21Up4vDa?0TVL8k5WGpD4FquPbr2uwnBXEB24tJXRhM5bUkxV5Kgir" coords="1,2,633,905" shape="rect">  
+    <area target="" alt="" title="" href="https://6STdzo8HO6m1ypW-forsrhyfpdlyovk.campaign-view.com/click/1106eab35e47d37c8/1106eab35e47d352e#un!qKD3DeyQEqpeCa7CZEfbvDJkd!d=80700_smd!NcwDKp8Ngl!c=1097318!KxQcM2Ow6qN7A!l=191!Cx5DY6243Grx0INeuFtvF3urPR2t8Qcln2NSgydSAZ7s!o=1508!LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH!v=2634!l65PSh5htzGMzb!m=1014!CMYTfIxabYGqT4RPZfvjiVhDdROsGvlsr21Up4vDa?0TVL8k5WGpD4FquPbr2uwnBXEB24tJXRhM5bUkxV5Kgir"  coords="416,900,497,923" shape="rect"></map>
+</center>
+</center></map></div>
+<Applet>
+<map name="image-map">
+    <area target="" alt="" title="" href="" coords="" shape="rect">
+    <area target="" alt="" title="" href="" coords="" shape="rect">
+    <area target="" alt="" title="" href="" coords="" shape="rect">
+</map>
+<style>
+<div style="text-align: center;">
+    <a href="#"><img src="" alt=""></a><br><br>
+    <a href="#"><img src="" alt=""></a><br><br>
+</head>
+<div style="text-align: center;">
+    <a href="#"><img src="" alt=""></a><br><br>
+    <a href="#"><img src="" alt=""></a><br><br>
+<div style="text-align: center;">
+    <a href="#"><img src="" alt=""></a><br><br>
+    <a href="#"><img src="" alt=""></a><br><br>
+    <img src="" usemap="#image-map" alt="">
+<div style="text-align: center;">
+    <a href="#"><img src="" alt=""></a><br><br>
+    <a href="#"><img src="" alt=""></a><br><br>
+    <img src="" usemap="#image-map" alt="">
+<center>
+<title>134.209.186.231
+<object>
+<TITLE>
+134.209.186.231
+<ObJECT>
+<title>134.209.186.231
+<tiTlE>
+134.209.186.231;
+</map>
+<sTyle>
+80540874
+</a>
+<title>  
+<H2> vfpeytogsoc5lhpyihzn0levnyih26syy8vo5qjsweg </H2>
+<H2> vfpeytogsoc5lhpyihzn0levnyih26syy8vo5qjsweg </H2>
+<H2> vfpeytogsoc5lhpyihzn0levnyih26syy8vo5qjsweg </h2>
+<H2> vfpeytogsoc5lhpyihzn0levnyih26syy8vo5qjsweg </H2>
+
+<h2> vfpeytogsoc5lhpyihzn0levnyih26syy8vo5qjsweg </H2>
+<h2> vfpeytogsoc5lhpyihzn0levnyih26syy8vo5qjsweg </H2>
+<Div dIr=ltrdata-sETdIr=false sTyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">740dr2dzlwkqwwd2jagdquoj9jr7xztmrzq3whtp2ayi1mlnjt</dIv>
+<div dir=ltrdata-setDir=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">uf2nk92m1oaksnnlcxank7adg53zkkcapcfnyflm6nwwqtodr5x0rygav56jca</DIv>
+<div DIr=ltrdata-setdIR=false sTyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">96ZVTND4QYVFCJ0AOP6KZR90Q6UIYUPFTFEPR7SXPPO6MEG3F</div>
+<DIV dIR=ltrdata-sEtDIr=false Style="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">6hir6ufdqrk0fyg4bi5i2nisiyon69zbqtib5absm2vljrtkhexscei</DiV>
+<div DiR=ltrdata-sEtDiR=false stYle="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">y36uasketia2bw7kds72suxkkee6p57kgt6japeeedurac78rj</diV>
+<diV DIr=ltrdata-setDiR=false stYLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">1qytimw3mkayk6mnqaft5dlq2wjl7oz0yob0puamc3kqod6cz2efmbkm</dIv>
+<DIv dIr=ltrdata-sETdIR=false StyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">rtxh80gchfg4avrzcntsgmqkdtybuhhd3l74mpn</diV>
+<Div DIr=ltrdata-setdIR=false StYLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">y6zqvtakmsll81elssaeerhqru6vdiqzq8d9yhhdsxem14dkhqzqd8jwpf0ii7pkpn3loxwuaylodkq</div>
+
+<diV Dir=ltrdata-setdir=false StyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">kedw1kjyrcsk1pgeysdbi2wgyrgumspxocvxt24petryowkzymlcmtge9dagvljdusljzpdrzjowrzlz</DiV>
+<DiV Dir=ltrdata-setdir=false sTyLe="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">cmktiokhqagvcx7mmasxr4zb7sxcntw59d5tujhino9zazkgy6lwjsaoqdjnx5wlcjwwvy6nmoy3r1gjiaescy</dIv>
+<Div Dir=ltrdata-setdir=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">yr2nzr5d7lashcmfpszh16qxx6amc7vydjfqitcrk78yve</DIv>
+<div Dir=ltrdata-setdir=false style="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">gpxy9xwibnwo32ypzxp5ww4fzvrbapyh6ain1jtgo0mn5mdzv</DIV>
+<dIV Dir=ltrdata-setdir=false STyLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">ujwnj20ls1yrdievob0edo3rwfcaccasj5qyz6h3c6cbx0vgsoewzg9h3w39r0jjmknpduuheodu4</div>
+<DiV DiR=ltrdata-SeTDir=false STYle="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">lpskbaumwns8mbmdcb2hkggn4jvk7qlijjy56nmcy81b6udjigbz8ffnywzzlk67pvpq8gpegrkbc1dmjjo</DIv>
+<diV dIR=ltrdata-sEtDir=false StYLE="height:2px;max-height:2px;overflow-y:hidden ;color:#ffe">o33jhvlxqj9gsly5uha8ru0sedbeumay15qxn7hnondlsibaldo6tcdxkt5hes</DIv>
+
+
+
+
+--_----------=bollin6STdzo8HO6m1ypW.NcwDKp8Ngl--
+--_-------6STdzo8HO6m1ypW.NcwDKp8Ngl-28020206866STdzo8HO6m1ypW.NcwDKp8Ngl=:--
+----==mimepart_IYq6rn2Gn5xchwbcpq_LdfHVyzrA2fPPbVXZy4dszHb9ZwS8CHt8y22h5FH
+Content-Type: text/html;
+Content-Transfer-Encoding: 00
+<div id="emailPreHeader" style="mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0; display:none !important;">Vercel Firewall | v0 Projects | Next.js Conf 2024</div>
+<img width="1" height="1" style="display:none !important;" alt="" />
+ 
+<table class="full-container darkmodebg" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0; border-collapse: collapse;margin: 0 auto;"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" style="background-color:#ffffff;"> 
+<table class="main" id="outer_table" width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0; border-collapse: collapse; min-width: 600px; width: 600px; margin: 0 auto;"> 
+<tbody> 
+<tr> 
+<td class="mktoContainer" id="template-wrapper">
+<table class="mktoModule" id="banner1" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="60" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td align="center"> <a href=
+"=" target="_blank"
+><img width="64" height="auto" border="0" style="height: auto !important; -ms-interpolation-mode: bicubic !important; "> 
+<div class="dark-img" style="display:none; visibility:hidden;" align="center"> 
+<img width="64" height="auto" border="0" style="height: auto !important; -ms-interpolation-mode: bicubic !important; "> 
+</div> </a> </td> 
+</tr> 
+<tr> 
+<td height="20" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td align="center" style="font-family: 'Geist', sans-serif; color: #000000; font-size: 38px; line-height: 46px; mso-line-height-rule: exactly; text-align: center; font-weight: 600; letter-spacing: -.04em;"> 
+<div class="mktoText" id="bannerhead"> 
+<p><b>Vercel Product Update</b></p> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="10" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td align="center" style="font-family: 'Geist', sans-serif; color: #444444; font-size: 16px; line-height: 24px; mso-line-height-rule: exactly; text-align: center;"> 
+<div class="mktoText" id="bannertext"> 
+<div>
+ Vercel Firewall | v0 Projects | Next.js Conf 2024 
+</div> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="60" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModulehd87e46df6-b257-4978-8304-71b2ce3408da" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="1" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #000000; font-size: 24px; line-height: 28px; mso-line-height-rule: exactly; text-align: left; font-weight: 600; letter-spacing: -.04em;"> 
+<div class="mktoText" id="bannerheadthb053c7ab5-a372-4c39-86ce-f6303c5b6d2f"> 
+<div> 
+<b>Vercel Firewall</b> 
+</div> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="bnr-Module" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="main darkmodebg" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td align="center" style="text-align: center;"> 
+<div class="mktoImg light-img" id="video-img" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="314" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> 
+<div class="mktoImg dark-img" id="video-imgdk" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="314" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModuleco" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #444444; font-size: 14px; line-height: 24px; mso-line-height-rule: exactly; text-align: left; font-weight: 400;"> 
+<div class="mktoText" id="bannertextthb"> 
+<p>We've made improvements to the Vercel Web Application Firewall (WAF) to further enhance traffic control:</p> 
+<ul> 
+<li><b>Persistent actions:</b> Block repeat offenders by applying rules across all matching requests for a customizable duration</li> 
+<li><b>Rate limiting:</b> Set request limits on specific endpoints to prevent API abuse while maintaining performance for legitimate users</li> 
+<li><b>Firewall API:</b> Programmatically control WAF settings to automate security workflows and integrate with third-party tools</li> 
+</ul> 
+<p><a href=
+"" target="_blank" style="color: #000000; text-decoration: underline;" class="mktNoTok"
+>Learn More</a></p> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="0" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="DividerModule0a6e0f1e-3b63-433e-a8d0-ec7efbb5addf" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td height="40" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td class="center" bgcolor="#EAEAEA" height="1" style="line-height:1px;font-size:1px; background-color: #EAEAEA;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td height="40" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModulehd04573184-1e82-420e-bcd8-222e0e25cbed" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="1" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #000000; font-size: 24px; line-height: 28px; mso-line-height-rule: exactly; text-align: left; font-weight: 600; letter-spacing: -.04em;"> 
+<div class="mktoText" id="bannerheadthb576a1001-7964-40d8-9dbb-2e5cd79e89a3"> 
+<div> 
+<b>v0 Projects</b> 
+</div> 
+</div> </td> 
+</tr> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="bnr-Module206be442-551c-403a-8f71-9772b4090fa8" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="main darkmodebg" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td align="center" style="text-align: center;"> 
+<div class="mktoImg light-img" id="video-imga58e7515-9f82-486c-a4c0-3f65d443be27" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="300" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> 
+<div class="mktoImg dark-img" id="video-imgdk4de2a279-f9ea-4129-93d1-0e3e8f3a0363" style="display:none; overflow:hidden; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center" mktolockimgsize="false"> 
+<a href=
+"" target="_blank"
+><img width="600" height="299" class="mobileimg" style="height: auto !important; -ms-interpolation-mode: bicubic !important; -ms-interpolation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px auto; border-spacing:0; display:block; border-radius:5px; "></a> 
+</div> </td> 
+</tr> 
+</tbody> 
+</table> </td> 
+</tr> 
+</tbody> 
+</table>
+<table class="mktoModule" id="CopyModuleco05c80b2c-e71c-4a13-a2b7-a8ac77199b76" cellpadding="0" align="center" cellspacing="0" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto;width:100%;border-collapse: collapse;border-spacing: 0;" border="0" width="100%"> 
+<tbody> 
+<tr> 
+<td class="darkmodebg" bgcolor="#ffffff" valign="top" style="background-Color:#ffffff;vertical-align: top;"> 
+<table class="inner_table" cellpadding="0" cellspacing="0" align="center" style="mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; margin:0 auto; width:600px;border-collapse: collapse;border-spacing: 0;" border="0" width="600"> 
+<tbody> 
+<tr> 
+<td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+</tr> 
+<tr> 
+<td style="font-family: 'Geist', sans-serif; color: #444444; font-size: 14px; line-height: 24px; mso-line-height-rule: exactly; text-align: left; font-weight: 400;">
